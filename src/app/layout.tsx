@@ -8,7 +8,10 @@ import { TRPCReactProvider } from "@/trpc/react";
 export const metadata: Metadata = {
   title: "XDream研发平台",
   description: "XDream研发平台 - 一站式开发工具集合",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
+  icons: [
+    { rel: "icon", url: "/xdream-logo.svg" },
+    { rel: "apple-touch-icon", url: "/xdream-logo.svg" }
+  ],
 };
 
 const geist = Geist({
