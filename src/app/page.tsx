@@ -101,7 +101,7 @@ export default function Home() {
                   iconBgClass="bg-[var(--color-primary)]/10"
                   iconTextClass="text-[var(--color-primary)]"
                   borderColorClass="bg-[var(--color-primary)]"
-                  href="http://code.xdreamdev.com/"
+                  href="http://146.56.251.98:8080"
                 />
 
                 {/* 文件服务平台工具卡 */}
@@ -126,7 +126,7 @@ export default function Home() {
                   iconBgClass="bg-[var(--color-primary)]/10"
                   iconTextClass="text-[var(--color-primary)]"
                   borderColorClass="bg-[var(--color-primary)]"
-                  href="http://file.xdreamdev.com/"
+                  href="http://146.56.251.98:5000"
                 />
 
                 {/* 研发Wiki工具卡 */}

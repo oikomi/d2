@@ -62,22 +62,29 @@ html {
   scroll-behavior: smooth;
 }
 
-/* 科幻主题全局样式 */
+/* AI+机器人风格全局背景 */
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   background-color: var(--color-bg-dark);
   background-image: 
-    radial-gradient(circle at 25% 25%, rgba(0, 229, 255, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 75% 75%, rgba(121, 40, 202, 0.05) 0%, transparent 50%),
-    linear-gradient(135deg, var(--color-bg-dark) 0%, var(--color-bg-light) 100%);
+    /* 中央AI核心效果 */
+    radial-gradient(circle at center, rgba(0, 229, 255, 0.15) 0%, transparent 60%),
+    /* 科技感光晕 */
+    radial-gradient(circle at 25% 25%, rgba(0, 229, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(121, 40, 202, 0.1) 0%, transparent 50%),
+    /* 渐变背景 */
+    linear-gradient(135deg, var(--color-bg-dark) 0%, var(--color-bg-light) 100%),
+    /* 电路板图案 */
+    repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0, 229, 255, 0.05) 10px, rgba(0, 229, 255, 0.05) 12px);
   color: var(--color-text);
   min-height: 100vh;
   position: relative;
+  overflow-x: hidden;
 }
 
-/* 添加科技感网格背景 */
+/* 机器人风格网格背景 */
 body::before {
   content: "";
   position: fixed;
@@ -85,12 +92,96 @@ body::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: linear-gradient(rgba(0, 229, 255, 0.1) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(0, 229, 255, 0.1) 1px, transparent 1px);
-  background-size: 20px 20px;
+  /* 主网格 */
+  background-image: linear-gradient(rgba(0, 229, 255, 0.15) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(0, 229, 255, 0.15) 1px, transparent 1px),
+                    /* 机器人电路效果 */
+                    repeating-linear-gradient(135deg, transparent, transparent 20px, rgba(121, 40, 202, 0.08) 20px, rgba(121, 40, 202, 0.08) 22px),
+                    repeating-linear-gradient(225deg, transparent, transparent 30px, rgba(0, 229, 255, 0.06) 30px, rgba(0, 229, 255, 0.06) 32px);
+  background-size: 40px 40px;
+  background-position: 0 0, 0 0, 0 0, 0 0;
   pointer-events: none;
   z-index: -1;
-  opacity: 0.3;
+  opacity: 0.5;
+  animation: gridMove 120s linear infinite;
+}
+
+/* 动态AI核心效果 */
+body::after {
+  content: "";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 60vh;
+  height: 60vh;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(0, 229, 255, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -2;
+  animation: aiCorePulse 8s ease-in-out infinite;
+}
+
+/* 添加AI代码流动效果 */
+@keyframes gridMove {
+  0% {
+    background-position: 0 0, 0 0, 0 0, 0 0;
+  }
+  100% {
+    background-position: 400px 400px, 400px 400px, 400px 400px, 400px 400px;
+  }
+}
+
+/* AI核心脉冲效果 */
+@keyframes aiCorePulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+/* 机器人眼睛效果 - 可在特定容器中使用 */
+.robot-eye {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #00e5ff, #00b4d8);
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.7);
+  overflow: hidden;
+  animation: eyeScan 3s ease-in-out infinite;
+}
+
+.robot-eye::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-bg-dark);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes eyeScan {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.05) rotate(5deg);
+  }
+  50% {
+    transform: scale(1) rotate(0deg);
+  }
+  75% {
+    transform: scale(1.05) rotate(-5deg);
+  }
 }
 
 /* 滚动条样式 - 科幻风格 */

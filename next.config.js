@@ -5,6 +5,10 @@
 import "./src/env.js";
 
 /** @type {import("next").NextConfig} */
-const config = {};
+const config = {
+  reactStrictMode: true,
+  // Configure allowed development origins to prevent cross-origin warnings
+  allowedDevOrigins: ['http://146.56.251.98', '146.56.251.98']
+};
 
 export default config;
